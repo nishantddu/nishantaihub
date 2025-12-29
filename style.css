@@ -31,6 +31,12 @@ header{
     z-index: 999;
 }
 
+.dark-mode header{
+    background-color: black;
+    color: white;
+    transition: .4s;
+}
+
 nav ul{
     display: flex;
     list-style: none;
@@ -41,6 +47,11 @@ nav ul li{
     color: var(--text-color);
     font-size: 1.2rem;
     transition: all .3s ease-in;
+}
+
+.dark-mode nav ul li{
+    color: white;
+    transition: .4s;
 }
 
 nav ul li:hover{
@@ -58,6 +69,7 @@ nav ul li:hover{
     border: 2px solid var(--primary-color);
     font-weight: 500;
     transition: all .2s ease-in;
+    cursor: pointer;
 }
 
 .sign .btn:hover{
@@ -66,6 +78,38 @@ nav ul li:hover{
     border: 2px solid var(--primary-color);
 }
 
+/* .mainNav {
+    display: none;
+}
+
+.mainNav.active{
+    display: block;
+}
+
+.toggleMenu{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1{
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3{
+    transform: translate(0, -11px) rotate(45deg);
+} */
 
 main{
     width: 100%;
@@ -131,14 +175,26 @@ footer{
     width: 100%;
     height: 50px;
     background-color: black;
+    transition: ease-in-out .4s;
 }
 
-p{
+footer p{
     font-size: 1rem;
     color: var(--white-color);
 }
 
+footer p a{
+    color: var(--primary-color);
+}
+footer p a:hover{
+    color: var(--white-color);
+}
 
+.dark-mode{
+    transition: .4s;
+    background-color: rgb(26, 26, 26);
+    color: #c9c9c9;
+}
 
 
 @media (max-width: 1200px) {
@@ -158,12 +214,25 @@ p{
 }
 
 @media (max-width: 768px) {
-    .card{
-        width: 280px;
+    
+    .logo h1{
+        font-size: 1.5rem;
     }
 
     .sign .btn{
-        display: none;
+    padding: 5px 10px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 2px solid var(--primary-color);
+    font-weight: 500;
+    transition: all .2s ease-in;
+    cursor: pointer;
+    }
+
+    .card{
+        width: 280px;
     }
 }
 
